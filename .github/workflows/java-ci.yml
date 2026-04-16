@@ -1,0 +1,17 @@
+name: Java CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compiler Java
+        run: javac src/Main.java
+
+      - name: Exécuter le programme
+        run: java -cp src Main
